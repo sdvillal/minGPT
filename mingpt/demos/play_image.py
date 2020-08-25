@@ -161,7 +161,7 @@ if __name__ == '__main__':
     # we'll do something a bit smaller
     mconf = GPTConfig(train_dataset.vocab_size, train_dataset.block_size,
                       embd_pdrop=0.0, resid_pdrop=0.0, attn_pdrop=0.0,
-                      n_layer=12, n_head=8, n_embd=256)
+                      n_layer=6, n_head=4, n_embd=128)
     model = GPT(mconf)
 
     # Note that I am running on an 8-GPU V100 machine so each GPU has 32GB.
@@ -175,7 +175,7 @@ if __name__ == '__main__':
     train_epochs = 20  # todo run a bigger model and longer, this is tiny
 
     # initialize a trainer instance and kick off training
-    tconf = TrainerConfig(max_epochs=train_epochs, batch_size=16 * 8, learning_rate=3e-3,
+    tconf = TrainerConfig(max_epochs=train_epochs, batch_size=8 * 2, learning_rate=3e-4,
                           betas=(0.9, 0.95), weight_decay=0,
                           lr_decay=True, warmup_tokens=tokens_per_epoch, final_tokens=train_epochs * tokens_per_epoch,
                           ckpt_path='cifar10_model.pt',
