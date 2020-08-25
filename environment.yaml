@@ -1,3 +1,4 @@
+# A development environment for mingpt
 name: mingpt
 
 channels:
@@ -7,9 +8,12 @@ channels:
 
 dependencies:
   - python
+  - pip
   - tqdm
   - numpy
   - pytorch
   - torchvision
   - jupyter
   - matplotlib
+  - pip:
+    - "-e ."

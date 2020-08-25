@@ -10,5 +10,5 @@ setup(
     author_email='',
     description='',
     install_requires=['tqdm', 'numpy', 'matplotlib',
-                      'pytorch', 'torchvision']
+                      'torch', 'torchvision']
 )
