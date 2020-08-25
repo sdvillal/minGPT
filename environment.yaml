@@ -1,0 +1,13 @@
+name: mingpt
+
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python
+  - tqdm
+  - numpy
+  - pytorch
+  - jupyter
